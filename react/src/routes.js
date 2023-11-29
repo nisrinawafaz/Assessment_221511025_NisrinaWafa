@@ -42,6 +42,10 @@ const CoreUIIcons = React.lazy(() => import('./views/icons/coreui-icons/CoreUIIc
 const Flags = React.lazy(() => import('./views/icons/flags/Flags'))
 const Brands = React.lazy(() => import('./views/icons/brands/Brands'))
 
+const tambahBarang = React.lazy(() => import('./views/pages/barang/tambahBarang'))
+const viewBarang = React.lazy(() => import('./views/pages/barang/viewBarang'))
+const editBarang = React.lazy(() => import('./views/pages/barang/editBarang'))
+
 // Notifications
 const Alerts = React.lazy(() => import('./views/notifications/alerts/Alerts'))
 const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
@@ -95,6 +99,9 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', element: Modals },
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
   { path: '/widgets', name: 'Widgets', element: Widgets },
+  { path: '/tambahBarang', name: 'tambahBarang', element: tambahBarang },
+  { path: '/viewBarang', name: 'viewBarang', element: viewBarang },
+  { path: '/edit/:key', name: 'editBarang', element: editBarang },
 ]
 
 export default routes
