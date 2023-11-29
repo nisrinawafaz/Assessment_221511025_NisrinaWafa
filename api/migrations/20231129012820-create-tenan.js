@@ -6,11 +6,12 @@ module.exports = {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
         type: Sequelize.INTEGER
       },
       KodeTenan: {
         type: Sequelize.STRING,
+        allowNull: false,
+        primaryKey: true,
       },
       NamaTenan: {
         type: Sequelize.STRING

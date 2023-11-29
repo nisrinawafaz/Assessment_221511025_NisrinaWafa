@@ -6,11 +6,12 @@ module.exports = {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
         type: Sequelize.INTEGER
       },
       KodeKasir: {
         type: Sequelize.STRING,
+        allowNull: false,
+        primaryKey: true,
       },
       Nama: {
         type: Sequelize.STRING
