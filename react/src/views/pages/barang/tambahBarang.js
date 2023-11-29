@@ -48,55 +48,61 @@ const Formbarang = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="NamaBarang">Nama Barang:</label>
-                <input
-                    type="text"
-                    id="NamaBarang"
-                    name="NamaBarang"
-                    value={formData.NamaBarang}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="Satuan">Satuan:</label>
-                <input
-                    type="text"
-                    id="Satuan"
-                    name="Satuan"
-                    value={formData.Satuan}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="HargaSatuan">Harga Satuan:</label>
-                <input
-                    type="number"
-                    id="HargaSatuan"
-                    name="HargaSatuan"
-                    value={formData.HargaSatuan}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="Stok">Stok:</label>
-                <input
-                    type="number"
-                    id="Stok"
-                    name="Stok"
-                    value={formData.Stok}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <button type="submit">Simpan Data</button>
-            </div>
-        </form>
+        <div className="container mt-5">
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label htmlFor="NamaBarang" className="form-label">Nama Barang:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="NamaBarang"
+                        name="NamaBarang"
+                        value={formData.NamaBarang}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="Satuan" className="form-label">Satuan:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="Satuan"
+                        name="Satuan"
+                        value={formData.Satuan}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="HargaSatuan" className="form-label">Harga Satuan:</label>
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="HargaSatuan"
+                        name="HargaSatuan"
+                        value={formData.HargaSatuan}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="Stok" className="form-label">Stok:</label>
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="Stok"
+                        name="Stok"
+                        value={formData.Stok}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <button type="submit" className="btn btn-primary">Simpan Data</button>
+                </div>
+            </form>
+        </div>
     );
 };
 

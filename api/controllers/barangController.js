@@ -45,7 +45,7 @@ exports.tambahBarang = async (req, res) => {
     try {
       const { id } = req.params; // Ambil ID dari parameter URL
       const barang = await Barang.get({
-        where: { id: id },
+        where: { KodeBarang: id },
       });
   
       if (barang) {
@@ -68,7 +68,7 @@ exports.tambahBarang = async (req, res) => {
     try {
       const { id } = req.params; 
       const newData = req.body;
-      const whereClause = { id };
+      const whereClause = { KodeBarang: id };
   
       const [updatedRowCount] = await Barang.patch(newData, whereClause);
   
@@ -85,7 +85,7 @@ exports.tambahBarang = async (req, res) => {
 
   exports.hapusBarang = async (req, res) => {
     try {
-      const whereClause = { id: req.params.id }; // Contoh: menghapus data berdasarkan ID
+      const whereClause = { KodeBarang: req.params.id }; // Contoh: menghapus data berdasarkan ID
       const deletedRowCount = await Barang.delete(whereClause);
   
       if (deletedRowCount === 0) {

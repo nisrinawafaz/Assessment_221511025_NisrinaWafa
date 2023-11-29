@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
-import React, { useState, useEffect} from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from "axios";
+
 const baseURL = "http://localhost:3000/barang/";
 
 const DataBarang = () => {
-    const [dataBarang, setDataBarang] = useState([]);
     const { key } = useParams();
     const [formData, setFormData] = useState({
         NamaBarang: '',
@@ -21,7 +21,6 @@ const DataBarang = () => {
     const fetchData = async () => {
         try {
             const response = await axios.get(`http://localhost:3000/barang/${key}`);
-            setDataBarang(response.data.data);
             setFormData({
                 NamaBarang: response.data.data.NamaBarang,
                 Satuan: response.data.data.Satuan,
@@ -50,57 +49,62 @@ const DataBarang = () => {
             [name]: value,
         }));
     };
+
     return (
-        <div>
+        <div className="container mt-5">
             <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="NamaBarang">Nama Barang:</label>
-                <input
-                    type="text"
-                    id="NamaBarang"
-                    name="NamaBarang"
-                    value={formData.NamaBarang}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="Satuan">Satuan:</label>
-                <input
-                    type="text"
-                    id="Satuan"
-                    name="Satuan"
-                    value={formData.Satuan}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="HargaSatuan">Harga Satuan:</label>
-                <input
-                    type="number"
-                    id="HargaSatuan"
-                    name="HargaSatuan"
-                    value={formData.HargaSatuan}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="Stok">Stok:</label>
-                <input
-                    type="number"
-                    id="Stok"
-                    name="Stok"
-                    value={formData.Stok}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <button type="submit">Simpan Data</button>
-            </div>
-        </form>
+                <div className="mb-3">
+                    <label htmlFor="NamaBarang" className="form-label">Nama Barang:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="NamaBarang"
+                        name="NamaBarang"
+                        value={formData.NamaBarang}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="Satuan" className="form-label">Satuan:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="Satuan"
+                        name="Satuan"
+                        value={formData.Satuan}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="HargaSatuan" className="form-label">Harga Satuan:</label>
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="HargaSatuan"
+                        name="HargaSatuan"
+                        value={formData.HargaSatuan}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="Stok" className="form-label">Stok:</label>
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="Stok"
+                        name="Stok"
+                        value={formData.Stok}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <button type="submit" className="btn btn-primary">Simpan Data</button>
+                </div>
+            </form>
         </div>
     );
 };
